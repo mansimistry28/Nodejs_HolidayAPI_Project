@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<Title>World's Holiday Calender</Title>
+</head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="app.js"></script>
+<style>
+    body{
+        background-color:azure;
+    }
+    </style>    
+<body>
+
+<div class="container">
+<div class="col-md-3 col-md-offset-5">
+    
+<div ng-app="myApp" ng-controller="holidayCtrl"> 
+    
+<form class="form-horizontal" ng-submit="submitHoliday()" name="myForm" novalidate>
+
+<h2>"Holiday Calender"</h2>
+<br/>
+  <h4>Choose country: </h4>
+  <select class="form-control" id="country" ng-select="fromCountry" ng-model="countryDDL">
+        <option  value=""></option>
+        <option  value="AR">ARGENTINA</option>
+        <option  value="AO">ANGOLA</option>
+        <option  value="AT">AUSTRIA</option>
+        <option  value="AU">AUSTRAILA</option>
+        <option  value="BE">BELGIUM</option>
+        <option  value="BG">BULGARIA</option>
+        <option  value="BR">BRAZIL</option>
+        <option  value="BS">THE BAHAMAS</option>
+        <option  value="CA">CANADA</option>
+        <option  value="CH">SWITZERLAND</option>
+        <option  value="CN">CHINA</option>
+        <option  value="CO">COLOMBIA</option>
+        <option  value="CU">CUBA</option>
+        <option  value="CZ">CZECH REPUBLIC</option>
+        <option  value="DE">GERMANY</option>
+        <option  value="DK">DENMARK</option>
+        <option  value="DO">DOMINICAN REPUBLIC</option>
+        <option  value="ES">SPAIN</option>
+        <option  value="FI">FINLAND</option>
+        <option  value="FR">FRANCE</option>
+        <option  value="GB">UNITED KINGDOM</option>
+        <option  value="GR">GREECE</option>
+        <option  value="HK">HONGKONG</option>
+        <option  value="HU">HUNGARY</option>
+        <option  value="ID">INDONESIA</option>
+        <option  value="IE">IRELAND</option>
+        <option  value="IN">INDIA</option>
+        <option  value="IL">ISRAEL</option>
+        <option  value="IS">ICELAND</option>
+        <option  value="IT">ITALY</option>
+        <option  value="JP">JAPAN</option>
+        <option  value="KZ">KAZAKHSTAN</option>
+        <option  value="LS">LESOTHO</option>
+        <option  value="MG">MADAGASCAR</option>
+        <option  value="MT">MALTA</option>
+        <option  value="MU">MAURITIUS</option>
+        <option  value="MX">MEXICO</option>
+        <option  value="NG">NIGERIA</option>
+        <option  value="NL">NETHERLAND</option>
+        <option  value="NO">NORWAY</option>
+        <option  value="PE">PERU</option>
+        <option  value="PK">PAKISTAN</option>
+        <option  value="PH">PHILLIPINES</option>
+        <option  value="PL">POLAND</option>
+        <option  value="PT">PORTUGAL</option>
+        <option  value="PY">PARAGUAY</option>
+        <option  value="RO">ROMANIA</option>
+        <option  value="RU">RUSSIA</option>
+        <option  value="NO">NORWAY</option>
+        <option  value="SW">SWEDEN</option>
+        <option  value="SG">SINGAPORE</option>
+        <option  value="TN">TUNISIA</option>
+        <option  value="TR">TURKEY</option>
+        <option  value="UA">UKRAINE</option>
+        <option  value="US">UNITED STATES</option>
+        <option  value="UY">URUGUAY</option>
+        <option  value="VE">VEEZUELA</option>
+        <option  value="ZA">SOUTH AFRICA</option>
+        <option  value="ZW">ZIMBABWE</option>   
+  </select>
+    
+  <h4>Choose Year: </h4>
+  <select id="year" class="form-control" ng-select="fromYear" ng-model="yearDDL"> 
+          <option value=""></option>
+          <option value="2011">1990</option>
+          <option value="2011">1991</option>
+          <option value="2011">1992</option>
+          <option value="2011">1993</option>
+          <option value="2011">1994</option>
+          <option value="2011">1995</option>
+          <option value="2011">1996</option>
+          <option value="2011">1997</option>
+          <option value="2011">1998</option>
+          <option value="2011">1999</option>
+          <option value="2011">2000</option>
+          <option value="2011">2001</option>
+          <option value="2011">2002</option>
+          <option value="2011">2003</option>
+          <option value="2011">2004</option>
+          <option value="2011">2005</option>
+          <option value="2011">2006</option>
+          <option value="2011">2007</option>
+          <option value="2011">2008</option>
+          <option value="2011">2009</option>
+          <option value="2011">2010</option>
+          <option value="2011">2011</option>
+          <option value="2011">2012</option>
+          <option value="2011">2013</option>
+          <option value="2011">2014</option>
+          <option value="2011">2015</option>
+          <option value="2011">2016</option>
+          <option value="2011">2017</option>
+          <option value="2011">2018</option>
+    </select>
+ 
+  <h4>Choose Month: </h4>
+  <select class="form-control" id="month" ng-select="fromMonth" ng-model="monthDDL">
+          <option value=""></option>
+          <option value="01" >JANUARY</option>
+          <option value="02">FEBRUARY</option>
+          <option value="03">MARCH</option>
+          <option value="04">APRIL</option>
+          <option value="05">MAY</option>
+          <option value="06">JUNE</option>
+          <option value="07">JULY</option>
+          <option value="08">AUGUST</option>
+          <option value="09">SEPTEMBER</option>
+          <option value="10">OCTOBER</option>
+          <option value="11">NOVEMBER</option>
+          <option value="12">DECEMBER</option>
+    </select>
+    
+    <br/>
+<input type="submit" id="btnSubmit" value="Check Holidays"   class="btn btn-primary btn-block"/>
+
+    <script type="text/javascript">
+    $(function(){
+        $("#btnSubmit").click(function (){
+            var country = $("#country");
+            
+            if(country.val() == ""){
+                alert("Please choose Country...!");
+                return false;
+            }
+            return true;
+        });
+        
+        $("#btnSubmit").click(function (){
+            var year = $("#year");
+            
+            if(year.val() == ""){
+                alert("Please choose Year...!");
+                return false;
+            }
+            return true;
+        });
+        
+        $("#btnSubmit").click(function (){
+            var month = $("#month");
+            
+            if(month.val() == ""){
+                alert("Please choose Month...!");
+                return false;
+            }
+            return true;
+        });
+        
+    });
+    
+    </script>
+  
+       <div id="Data" value="result">
+    
+<div ng-repeat="holiday in holidayList">
+   
+<br/>
+      <div id="DataOuter">
+    
+     <div id="Data" value="result">
+    
+    <h4>{{ name }}{{ holiday.name }}</h4>
+    <h4>{{ date }}{{ holiday.date }}</h4>
+    <br/>
+    <hr/>
+        </div>
+   </div>            
+</div>    
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>
